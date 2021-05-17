@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">YourBooks</string>
+    <string name="title">Moja mała księgarnia</string>
+    <string name="add">Dodaj</string>
+    <string name="save">Zapisz</string>
+    <string name="isRead">Przeczytana</string>
+    <string name="isnotRead">Nie przeczytana</string>
+    <string name="login">Zaloguj się</string>
+    <string name="ifRegistrationNedded">Zarejestruj się, jeśli nie posiadasz konta</string>
+    <string name="register">Zarejestruj się</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

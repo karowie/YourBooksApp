@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-common-ktx:19.3.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a9b57ee30f7c642cfbcef56b4caddfb2/jetified-firebase-common-ktx-19.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3001f7b9412d619bb1cba07e2bf4d5fc/jetified-firebase-common-ktx-19.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1bd4009a53316efea38282b42e8d5323/jetified-firebase-common-ktx-19.3.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1bd4009a53316efea38282b42e8d5323/jetified-firebase-common-ktx-19.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1bd4009a53316efea38282b42e8d5323/jetified-firebase-common-ktx-19.3.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-common-ktx/19.3.1/ab0adf60c7d558d9c09c3e9c6ca342ef19e204e8/firebase-common-ktx-19.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
