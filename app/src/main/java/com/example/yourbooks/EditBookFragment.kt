@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import kotlinx.android.synthetic.main.fragment_books.*
+import kotlinx.android.synthetic.main.fragment_edit_book.*
 
 class EditBookFragment : Fragment() {
 

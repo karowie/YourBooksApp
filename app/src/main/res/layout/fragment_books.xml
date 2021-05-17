@@ -6,19 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/imageButtonLogOut"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="right"
-        android:backgroundTint="@color/secondary"
-        android:scaleType="fitCenter"
-        android:tint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_power_off" />
 <!--    <TextView-->
 <!--        android:id="@+id/textViewTitle"-->
 <!--        android:layout_width="match_parent"-->
@@ -33,80 +20,79 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <LinearLayout
-        android:id="@+id/AuthorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageButtonLogOut"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/AuthorLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@id/imageButtonLogOut">-->
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:id="@+id/AutorWrapper"
-            android:layout_marginTop="20dp"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/editTextAuthor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="Autor"
-                android:textColorHint="@color/primaryL"
-                android:ems="10"
-                android:inputType="textPersonName"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:id="@+id/AutorWrapper"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <EditText-->
+<!--                android:id="@+id/editTextAuthor"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:hint="Autor"-->
+<!--                android:textColorHint="@color/primaryL"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
 
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+<!--    </LinearLayout>-->
 
-    <LinearLayout
-        android:id="@+id/TitleLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AuthorLayout">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/TitleLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/AuthorLayout">-->
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:id="@+id/TitleWrapper"
-            android:layout_height="wrap_content">
-            <EditText
-                android:id="@+id/editTextTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="Tytuł"
-                android:textColorHint="@color/primaryL"
-                android:ems="10"
-                android:inputType="textPersonName"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:id="@+id/TitleWrapper"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <EditText-->
+<!--                android:id="@+id/editTextTitle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:hint="Tytuł"-->
+<!--                android:textColorHint="@color/primaryL"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+<!--    </LinearLayout>-->
 
-    <Spinner
-        android:id="@+id/spinnerIsRead"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/TitleLayout"
-        />
+<!--    <Spinner-->
+<!--        android:id="@+id/spinnerIsRead"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:spinnerMode="dialog"-->
+<!--        android:gravity="center"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/TitleLayout"-->
+<!--        />-->
 
-    <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/add"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerIsRead"
-        android:backgroundTint="@color/secondary"
-        tools:ignore="RtlCompat" />
+<!--    <Button-->
+<!--        android:id="@+id/buttonAdd"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textAlignment="center"-->
+<!--        android:text="@string/add"-->
+<!--        android:layout_margin="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/spinnerIsRead"-->
+<!--        android:backgroundTint="@color/secondary"-->
+<!--        tools:ignore="RtlCompat" />-->
 
 
     <LinearLayout
@@ -114,11 +100,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdd">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/SearchLayout"
@@ -144,8 +129,8 @@
 
         <ImageButton
             android:id="@+id/imageButtonSearch"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="right"

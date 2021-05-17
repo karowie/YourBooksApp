@@ -53,37 +53,8 @@ class BooksFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupLogoutClick()
-        setupAddButton()
+        //setupLogoutClick()
 
-        context?.let { context ->
-            val list = mutableListOf(
-                "Przeczytane",
-                "Nie przeczytane"
-            )
-            val adapter: ArrayAdapter<String> = object : ArrayAdapter<String>(
-                context, android.R.layout.simple_spinner_dropdown_item,
-                list
-            ) {
-                override fun getDropDownView(
-                    position: Int,
-                    convertView: View?,
-                    parent: ViewGroup
-                ): View {
-                    val view: TextView =
-                        super.getDropDownView(position, convertView, parent) as TextView
-                    view.setTypeface(Typeface.MONOSPACE, Typeface.BOLD)
-                    view.setTextColor(Color.parseColor("#FF000000"))
-
-                    if (position == spinnerIsRead.selectedItemPosition) {
-                        view.background = ColorDrawable(Color.parseColor("#c8e6c9"))
-                    }
-                    return view
-                }
-
-            }
-            spinnerIsRead.adapter = adapter
-        }
 
         bookRecyclerView=student_list.apply {
             this.layoutManager = bookLayoutManager
@@ -103,8 +74,11 @@ class BooksFragment : BaseFragment() {
                         val model = h.getValue(Book::class.java)
                         listOfItems?.add(model!!)
                     }
+                    try{
                     val adapter = BookAdapter(listOfItems,context!!)
                     bookRecyclerView?.setAdapter(adapter)
+                    }
+                    catch(e:Exception) { }
                 }
             }
         })
@@ -113,44 +87,15 @@ class BooksFragment : BaseFragment() {
 
     }
 
-    private fun setupAddButton() {
-        buttonAdd.setOnClickListener {
-
-            if(editTextAuthor.text.toString()=="")
-            {
-                Snackbar.make(requireView(), "Musisz podać autora", Snackbar.LENGTH_SHORT).show()
-            }
-            else if(editTextTitle.text.toString()=="")
-            {
-                Snackbar.make(requireView(), "Musisz podać tytuł", Snackbar.LENGTH_SHORT).show()
-            }
-            else{
-                var author = editTextAuthor.text.toString().trim()
-                var title = editTextTitle.text.toString().trim()
-
-                val id = currentUser.push().key?:""
-
-                val book = Book(id, author,title,spinnerIsRead.getSelectedItem().toString(),"")
-
-                currentUser.child(id).setValue(book).addOnCompleteListener{
-                    editTextAuthor.setText("")
-                    editTextTitle.setText("")
-                    Snackbar.make(requireView(), "Dodałeś nową książkę.", Snackbar.LENGTH_SHORT).show()
-
-                }
-            }
-        }
-    }
 
 
-
-    private fun setupLogoutClick() {
-        imageButtonLogOut.setOnClickListener {
-            if(fbAuth.currentUser!=null)
-            {
-                fbAuth.signOut()
-                LogOut()
-            }
-        }
-    }
+//    private fun setupLogoutClick() {
+//        imageButtonLogOut.setOnClickListener {
+//            if(fbAuth.currentUser!=null)
+//            {
+//                fbAuth.signOut()
+//                LogOut()
+//            }
+//        }
+//    }
 }

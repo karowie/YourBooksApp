@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">YourBooks</string>
+    <string name="app_name"></string>
     <string name="title">Moja mała księgarnia</string>
     <string name="add">Dodaj</string>
     <string name="save">Zapisz</string>
