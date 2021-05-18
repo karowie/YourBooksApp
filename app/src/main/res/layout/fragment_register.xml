@@ -8,11 +8,13 @@
         android:background= "@drawable/books20per"
         android:orientation="horizontal">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
+
 
 
         <LinearLayout
@@ -113,11 +115,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/register"
                 android:backgroundTint="@color/secondary"
+                android:textColor="@color/primaryD"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
         </LinearLayout>
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>

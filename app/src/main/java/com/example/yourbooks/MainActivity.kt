@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
+import com.example.yourbooks.Model.Book
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_books.*
@@ -26,8 +27,13 @@ class MainActivity : AppCompatActivity() {
 
         bottom_nav.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.books -> makeCurrentFragment(booksFragment)
-                R.id.addBook -> makeCurrentFragment(addBookFragment)
+                R.id.books ->{
+                    this.setTitle("Moja mała księgarnia")
+                    makeCurrentFragment(booksFragment)
+                }
+                R.id.addBook -> {
+                    this.setTitle("Tutaj możesz dodać książkę")
+                    makeCurrentFragment(addBookFragment)}
             }
             true
         }
@@ -62,6 +68,17 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
     }
+
+//    override fun passData(book: Book) {
+//        val budle = Bundle()
+//        budle.putParcelable(book)
+//
+//        val transaction = this.supportFragmentManager.beginTransaction()
+//        val editBookFragment = EditBookFragment()
+//
+//        editBookFragment.arguments = budle
+//        transaction.replace()
+//    }
 
 
 }

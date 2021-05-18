@@ -14,7 +14,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
-        android:backgroundTint="@color/primaryDTransparent"
+        android:backgroundTint="@color/primaryL"
+        app:cardCornerRadius="20dp"
         >
 
 
@@ -47,7 +48,9 @@
                         android:layout_weight="1"
                         android:text="TextView"
                         android:textColor="@color/white"
-                        android:textSize="18dp" />
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        />
 
                     <TextView
                         android:id="@+id/textViewIsReadText"
@@ -71,6 +74,7 @@
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 >
 
                 <ImageButton

@@ -4,14 +4,14 @@
         android:id="@+id/books"
         android:icon="@drawable/ic_book"
         android:title="Książki"/>
-    <item
-        android:id="@+id/readBooks"
-        android:icon="@drawable/ic_check_box"
-        android:title="Czytane"/>
-    <item
-        android:id="@+id/notReadBooks"
-        android:icon="@drawable/ic_check_box_blank"
-        android:title="Nie czytane"/>
+<!--    <item-->
+<!--        android:id="@+id/readBooks"-->
+<!--        android:icon="@drawable/ic_check_box"-->
+<!--        android:title="Czytane"/>-->
+<!--    <item-->
+<!--        android:id="@+id/notReadBooks"-->
+<!--        android:icon="@drawable/ic_check_box_blank"-->
+<!--        android:title="Nie czytane"/>-->
     <item
         android:id="@+id/addBook"
         android:icon="@drawable/ic_add"

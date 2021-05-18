@@ -10,11 +10,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.fragment_edit_book.*
+import kotlinx.android.synthetic.main.fragment_edit_book.view.*
 
 class EditBookFragment : Fragment() {
 
-
+    var isRead = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,13 +25,25 @@ class EditBookFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_book, container, false)
+        val view = inflater.inflate(R.layout.fragment_edit_book, container, false)
+
+        view.editTextAuthor.setText(arguments?.getString("Author")?:"")
+        view.editTextTitle.setText(arguments?.getString("Title")?:"")
+        isRead = arguments?.getString("IsRead")?:""
+        view.editTextComment.setText(arguments?.getString("Comment")?:"")
+
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setCancelButton()
 
         context?.let { context ->
             val list = mutableListOf(
                 "Przeczytane",
-                "Nie przeczytane"
+                "Nieprzeczytane"
             )
             val adapter: ArrayAdapter<String> = object : ArrayAdapter<String>(
                 context, android.R.layout.simple_spinner_dropdown_item,
@@ -53,6 +67,22 @@ class EditBookFragment : Fragment() {
 
             }
             spinnerIsRead.adapter = adapter
+        }
+        if(isRead!="Przeczytane")
+            spinnerIsRead.setSelection(1)
+
+    }
+
+    private fun setCancelButton()
+    {
+        buttonCancel.setOnClickListener {
+            var activity=context as AppCompatActivity
+            var booksFragment = BooksFragment()
+            activity.supportFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment, booksFragment)
+                commit()
+            }
+
         }
     }
 

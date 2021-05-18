@@ -1,5 +1,6 @@
 package com.example.yourbooks
 
+import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.yourbooks.Model.Book
@@ -31,12 +33,12 @@ class AddBookFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupAddButton()
+        setupAddButton(view)
 
         context?.let { context ->
             val list = mutableListOf(
                 "Przeczytane",
-                "Nie przeczytane"
+                "Nieprzeczytane"
             )
             val adapter: ArrayAdapter<String> = object : ArrayAdapter<String>(
                 context, android.R.layout.simple_spinner_dropdown_item,
@@ -47,6 +49,7 @@ class AddBookFragment : Fragment() {
                     convertView: View?,
                     parent: ViewGroup
                 ): View {
+                    view.hideKeyboard()
                     val view: TextView =
                         super.getDropDownView(position, convertView, parent) as TextView
                     view.setTypeface(Typeface.MONOSPACE, Typeface.BOLD)
@@ -63,7 +66,7 @@ class AddBookFragment : Fragment() {
         }
     }
 
-    private fun setupAddButton() {
+    private fun setupAddButton(v:View) {
         buttonAdd.setOnClickListener {
 
             if(editTextAuthor.text.toString()=="")
@@ -83,6 +86,7 @@ class AddBookFragment : Fragment() {
                 val book = Book(id, author,title,spinnerIsRead.getSelectedItem().toString(),"")
 
                 currentUser.child(id).setValue(book).addOnCompleteListener{
+                    v.hideKeyboard()
                     editTextAuthor.setText("")
                     editTextTitle.setText("")
                     Snackbar.make(requireView(), "Dodałeś nową książkę.", Snackbar.LENGTH_SHORT).show()
@@ -90,5 +94,10 @@ class AddBookFragment : Fragment() {
                 }
             }
         }
+    }
+
+    fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
     }
 }

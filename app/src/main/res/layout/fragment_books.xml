@@ -103,21 +103,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
 
-        <LinearLayout
-            android:id="@+id/SearchLayout"
-            android:layout_width="350sp"
-            android:layout_height="wrap_content">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:id="@+id/SearchWrapper"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/editTextMiasto"
+                    android:id="@+id/editTextSearch"
                     android:layout_height="wrap_content"
-                    android:layout_width="350sp"
+                    android:layout_width="match_parent"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="Jakiej książki szukasz?"
@@ -125,7 +126,11 @@
                     android:layout_gravity="left"
                     android:layout_marginHorizontal="10sp"/>
             </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/imageButtonSearch"
@@ -138,7 +143,9 @@
             android:scaleType="fitCenter"
             android:tint="@color/black"
             app:srcCompat="@android:drawable/ic_menu_search" />
+        </TableLayout>
     </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/student_list"

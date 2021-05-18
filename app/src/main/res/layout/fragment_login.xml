@@ -85,10 +85,11 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/secondary"
+            android:textColor="@color/primaryD"
             android:text="@string/login" />
 
-    </LinearLayout>
 
+    </LinearLayout>
 
     <Button
         android:id="@+id/loginRegisterButton"
@@ -97,6 +98,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/secondary"
+        android:textColor="@color/primaryD"
         android:text="@string/ifRegistrationNedded" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
