@@ -90,7 +90,6 @@ class AddBookFragment : Fragment() {
                     editTextAuthor.setText("")
                     editTextTitle.setText("")
                     Snackbar.make(requireView(), "Dodałeś nową książkę.", Snackbar.LENGTH_SHORT).show()
-
                 }
             }
         }
